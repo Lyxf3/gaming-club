@@ -1,0 +1,46 @@
+.auth {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.auth span {
+    margin-bottom: 60px;
+}
+.input-field label {
+    position: absolute;
+    top: -22%;
+    left: 14px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    /* identical to box height */
+
+    letter-spacing: 0.105em;
+
+    color: rgba(0, 0, 0, 0.55);
+    width: 140px;
+    height: 22px;
+    text-align: center;
+
+    background: #FFFFFF;
+    border: 1px solid #D4D4D4;
+}
+.input-field {
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+
+    margin-bottom: 50px;
+}
+
+.card-action {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+
+}
+

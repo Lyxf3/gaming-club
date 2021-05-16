@@ -1,0 +1,33 @@
+.btn_dark {
+    width: 177px;
+    height: 48px;
+
+    background: #414141;
+    border: 1px solid #9A9A9A;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.125em;
+
+    color: #FFFFFF;
+}
+
+.btn_white {
+    width: 267px;
+    height: 48px;
+
+    background: #FFFFFF;
+    border: 1px solid #9A9A9A;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.125em;
+
+    color: #000000;
+}

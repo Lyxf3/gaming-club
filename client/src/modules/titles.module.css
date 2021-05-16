@@ -1,0 +1,92 @@
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+//margin-top: 4vh;
+text-align: center;
+
+font-family: 'Oswald', sans-serif;
+
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+
+letter-spacing: 0.05em;
+text-transform: uppercase;
+
+color: #FFFFFF;
+}
+
+.title span {
+    color: #E8505B;
+
+}
+.title div {
+    display: inline;
+
+}
+.title div:hover {
+    color: #E8505B;
+
+}
+
+.title:after {
+    content: '';
+    display: block;
+    width: 210px;
+    margin: 0 auto;
+    height: 1px;
+    background: #FFFFFF;
+}
+
+
+
+
+.sub_title {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+
+    letter-spacing: 0.22em;
+    color: #FFFFFF;
+}
+
+
+
+
+.about_title {
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+
+    color: #FFFFFF;
+
+}
+
+.about_title span {
+    color: #E8505B;
+
+}
+
+
+.footer_title {
+    font-family: 'Oswald',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+
+}
+
+

@@ -1,0 +1,40 @@
+.app {
+    display: grid;
+    grid-template-rows: 140px 1fr 140px;
+    grid-template-columns: 1fr 1fr;
+    max-height: 100vh;
+    height: 100%;
+}
+
+.header {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+
+    display: grid;
+    grid-template-columns: 50px 145px 50px 1fr 40px 50px;
+    grid-template-areas: " . logo . nav profile_icon .";
+
+    align-items: center;
+    padding-top: 30px;
+}
+
+.content {
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
+    display: grid;
+    grid-template-columns: 64px calc(50% - 64px) 50%;
+    grid-template-rows: 140px 1fr 140px ;
+}
+
+.content .dots {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+}
+
+.footer {
+    grid-column: 1 / 3;
+    grid-row: 3 / 3;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 2fr 50px;
+    align-items: center;
+}

@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    height: 100vh;
+    color: #ffffff;
+    /*background: url("./details/images/main-bg.png") center center / cover no-repeat;*/
+
+}
