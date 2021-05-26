@@ -1,9 +1,8 @@
 .app {
     display: grid;
-    grid-template-rows: 140px 1fr 140px;
+
+    grid-template-rows: 1fr 10fr 1fr;
     grid-template-columns: 1fr 1fr;
-    max-height: 100vh;
-    height: 100%;
 }
 
 .header {
@@ -23,11 +22,10 @@
     grid-row: 1 / 4;
     display: grid;
     grid-template-columns: 64px calc(50% - 64px) 50%;
-    grid-template-rows: 140px 1fr 140px ;
 }
 
-.content .dots {
-    grid-column: 1 / 1;
+.dots {
+    grid-column: 1 /1;
     grid-row: 2 / 2;
 }
 
@@ -35,6 +33,6 @@
     grid-column: 1 / 3;
     grid-row: 3 / 3;
     display: grid;
-    grid-template-columns: 50px 1fr 1fr 2fr 50px;
+    grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;
     align-items: center;
 }

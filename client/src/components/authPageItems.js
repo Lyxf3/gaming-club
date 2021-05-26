@@ -3,7 +3,7 @@ import components from "../modules/components.module.css";
 import React, {useState} from "react";
 
 export const StaticInput = (props) => {
-    const {labelValue, changeHandler, name, id, form} = props
+    const {labelValue, changeHandler, name, id} = props
     return (
         <>
             <label htmlFor={name}>{labelValue}</label>
@@ -19,7 +19,7 @@ export const StaticInput = (props) => {
 }
 
 export const InputPassword = (props) => {
-    const {labelValue, changeHandler, name, id, form} = props
+    const {labelValue, changeHandler, name, id} = props
     const [show, setShow] = useState(false)
     return (
         <>

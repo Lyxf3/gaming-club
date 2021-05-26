@@ -1,6 +1,9 @@
 .auth {
     height: 100vh;
-
+    background-image: url('Back GLHF.png');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: 50% 50%;
     display: flex;
     align-items: center;
     justify-content: center;

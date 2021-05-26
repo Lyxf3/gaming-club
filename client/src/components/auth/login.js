@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {NavLink, withRouter} from 'react-router-dom'
 import {StaticInput, InputPassword} from "../authPageItems";
-import "../../pages/auth-page/authPage.css"
+import "./authPage.css"
 
 import titles from "../../modules/titles.module.css";
 import buttons from "../../modules/buttons.module.css"
@@ -9,10 +9,12 @@ import {useHttp} from "../../hooks/http.hook";
 import {useAuth} from "../../hooks/auth.hook";
 import ParticlesComponent from "../particles-background/ParticlesComponent";
 import {useMessage} from "../../hooks/message.hook";
+import {AuthContext} from "../../context/AuthContext";
 
 
 const Login = () => {
-    const auth = useAuth()
+    // const auth = useAuth()
+    const auth = useContext(AuthContext)
     const {loading, request, error, clearError} = useHttp()
     const message = useMessage()
     const [form, setForm] = useState({
@@ -109,7 +111,6 @@ const Login = () => {
                         Подтвердить</button>
                 </div>
             </div>
-            <ParticlesComponent />
         </>
     )
 }
