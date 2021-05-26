@@ -4,14 +4,22 @@ import {useRoutes} from "../../routes";
 
 
 import './App.css'
+import {useAuth} from "../../hooks/auth.hook";
+import {AuthContext} from "../../context/AuthContext";
 
 function App() {
-    const routes = useRoutes(false)
+    const {token, login, logout, userId} = useAuth()
+    const isAuthenticated = !!token
+    const routes = useRoutes(isAuthenticated)
 
     return (
-        <Router className="app">
-            {routes}
-        </Router>
+        <AuthContext.Provider value={{
+            token, login, logout, userId, isAuthenticated
+        }}>
+            <Router className="app">
+                {routes}
+            </Router>
+        </AuthContext.Provider>
     )
 }
 

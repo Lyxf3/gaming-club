@@ -11,13 +11,29 @@
     line-height: 21px;
     text-align: center;
     letter-spacing: 0.125em;
+    cursor: pointer;
 
     color: #FFFFFF;
+}
+
+.btn_send_email {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    background: none;
+    border: none;
+    text-align: center;
+    letter-spacing: 0.125em;
+
+    color: #8B8B8B;
+    cursor: pointer;
 }
 
 .btn_white {
     width: 267px;
     height: 48px;
+    cursor: pointer;
 
     background: #FFFFFF;
     border: 1px solid #9A9A9A;

@@ -4,25 +4,45 @@ import {TarifsPage} from './pages/tarifs-page/tarifsPage'
 import {TournamentsPage} from "./pages/tournaments-page/tournamentsPage";
 import {AboutPage} from "./pages/about-us/aboutPage";
 import {ContactsPage} from "./pages/contacts-page/contactsPage";
-import {AuthPage} from "./pages/auth-page/authPage";
+import Login from "./components/auth/login";
+import SendEmail from "./components/auth/sendEmail";
+import Register from "./components/auth/register";
+
 
 export const useRoutes = (isAuthenticated) => {
+    console.log(isAuthenticated)
     if (isAuthenticated) {
         return (
-         <Switch>
-             <Route path="/" component={AboutPage} exact />
-             <Route path="/tariffs" component={TarifsPage} />
-             <Route path="/tournaments" component={TournamentsPage} />
-             <Route path="/contacts" component={ContactsPage} />
-             <Route render={() => <h1>404 not found</h1>} />
-         </Switch>
+            <Switch>
+                <Route path="/" exact>
+                    <AboutPage />
+                </Route>
+                <Route path="/tariffs" exact>
+                    <TarifsPage />
+                </Route>
+                <Route path="/tournaments">
+                    <TournamentsPage />
+                </Route>
+                <Route path="/contacts">
+                    <ContactsPage />
+                </Route>
+                <Redirect to="/" />
+            </Switch>
         )
     }
 
     return (
         <Switch>
-            <Route path="/auth" component={AuthPage} />
-            <Redirect to="/auth"/>
+            <Route path="/auth/register" exact>
+                <Register />
+            </Route>
+            <Route path="/auth/login" exact>
+                <Login />
+            </Route>
+            <Route path="/auth/sendEmail" exact>
+                <SendEmail />
+            </Route>
+            <Redirect to="/auth/register" />
         </Switch>
     )
 }

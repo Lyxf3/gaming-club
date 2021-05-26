@@ -1,5 +1,8 @@
 {
   "port": 5000,
   "mongoUri": "mongodb+srv://LyxF3:dmitry_2002@cluster0.rgjqp.mongodb.net/app?retryWrites=true&w=majority",
-  "jstSecret": " gaming club user id"
+  "jwtSecret": " gaming club user id",
+  "sendgridApiKey": "",
+  "emailFrom": "gaming.club@gmail.com",
+  "baseUrl": "http://localhost:3000"
 }
