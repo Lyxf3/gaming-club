@@ -10,7 +10,6 @@ import Register from "./components/auth/register";
 
 
 export const useRoutes = (isAuthenticated) => {
-    console.log(isAuthenticated)
     if (isAuthenticated) {
         return (
             <Switch>

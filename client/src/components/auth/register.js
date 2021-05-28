@@ -84,7 +84,7 @@ const register= {
                 {statInputs}
                 {passInput}
 
-                <div className="card-action">
+            <div className="card-action">
                     <NavLink to={"/auth/login"} exact >
                         <button
                             className={buttons.btn_dark}

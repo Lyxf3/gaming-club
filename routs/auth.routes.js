@@ -49,7 +49,6 @@ router.post(
             await user.save()
 
             res.status(201).json({ message: 'Пользователь создан' })
-            res.redirect("/api/auth/login")
 
             await transporter.sendMail(regEmail(email, login, password))
         } catch (e) {
@@ -61,7 +60,7 @@ router.post(
 router.post(
     '/login',
     [
-        check('email', 'Введите корректный login').exists(),
+        check('login', 'Введите корректный login').exists(),
         check('password', 'Введите пароль').exists()
     ],
     async (req, res) => {
@@ -95,7 +94,6 @@ router.post(
             )
 
             res.json({ token, userId: user.id })
-
         } catch (e) {
             res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
             console.log(e.message)
@@ -130,7 +128,7 @@ router.post(
 
             res.status(201).json({ message: 'Письмо отправлено' })
 
-            res.redirect("/api/auth/login")
+            // res.redirect("/api/auth/login")
         } catch (e) {
             res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
             console.log(e.message)
