@@ -24,7 +24,7 @@
     grid-row: 1 / 4;
     display: grid;
     grid-template-columns: 64px calc(50% - 64px) 50%;
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 15% 70% 15%;
 }
 
 .dots {

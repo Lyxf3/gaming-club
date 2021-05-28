@@ -7,6 +7,7 @@
 
 
 .profile_icon {
+    cursor: pointer;
     grid-area: profile_icon;
     z-index: 10;
 }

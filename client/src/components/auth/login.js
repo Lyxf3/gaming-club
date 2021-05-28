@@ -15,6 +15,8 @@ import {AuthContext} from "../../context/AuthContext";
 const Login = () => {
     // const auth = useAuth()
     const auth = useContext(AuthContext)
+    // const {token, login, logout, userId} = useAuth()
+
     const {loading, request, error, clearError} = useHttp()
     const message = useMessage()
     const [form, setForm] = useState({

@@ -1,13 +1,29 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 
 import headerStyles from "./header.module.css"
 
 import {NavLink} from "react-router-dom";
 import logo from "../../details/images/Logo.png";
 import profileIcon from "../../details/icons/profile-icon.png";
+import {AuthContext} from "../../context/AuthContext";
+import {useHttp} from "../../hooks/http.hook";
+import {useMessage} from "../../hooks/message.hook";
 
 
 export const Header = () => {
+    const auth = useContext(AuthContext)
+    const {error, clearError} = useHttp()
+    const message = useMessage()
+
+    const logoutHandler = async () => {
+        try {
+            auth.logout()
+        } catch (e) {}
+    }
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
     return (
         <header className="header">
             <NavLink to={"/"} className={headerStyles.logo}><img src={logo} alt="logo"/></NavLink>
@@ -35,7 +51,7 @@ export const Header = () => {
                     </li>
                 </ul>
             </nav>
-            <div className={headerStyles.profile_icon}>
+            <div className={headerStyles.profile_icon} onClick={logoutHandler}>
                 <img src={profileIcon} alt="profileIcon"/>
             </div>
         </header>
