@@ -9,7 +9,6 @@ import {AuthContext} from "../../context/AuthContext";
 import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
 
-
 export const Header = () => {
     const auth = useContext(AuthContext)
     const {error, clearError} = useHttp()

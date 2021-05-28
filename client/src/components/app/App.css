@@ -2,7 +2,7 @@
     height: 100vh;
     display: grid;
 
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 1fr 7fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -28,8 +28,11 @@
 }
 
 .dots {
-    grid-column: 1 /1;
     grid-row: 2 / 2;
+    position: absolute;
+    top: 15%;
+    height: 70vh;
+    margin-left: 25px;
 }
 
 .footer {
