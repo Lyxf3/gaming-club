@@ -23,5 +23,6 @@ ul {
 }
 
 .active {
-    background: #FFFFFF;
+    border: 2px solid #E8505B;
+    background: #E8505B;
 }
