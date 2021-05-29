@@ -6,17 +6,12 @@ import "./authPage.css"
 import titles from "../../modules/titles.module.css";
 import buttons from "../../modules/buttons.module.css"
 import {useHttp} from "../../hooks/http.hook";
-import {useAuth} from "../../hooks/auth.hook";
-import ParticlesComponent from "../particles-background/ParticlesComponent";
 import {useMessage} from "../../hooks/message.hook";
 import {AuthContext} from "../../context/AuthContext";
 
 
 const Login = () => {
-    // const auth = useAuth()
     const auth = useContext(AuthContext)
-    // const {token, login, logout, userId} = useAuth()
-
     const {loading, request, error, clearError} = useHttp()
     const message = useMessage()
     const [form, setForm] = useState({
@@ -49,38 +44,28 @@ const Login = () => {
         ]
     }
     const statInputs = login.static.map( (item) => {
-        if ( typeof item === 'object' && isEmpty(item) ){
-            const {id, ...itemProps} = item;
-            return (
-                <div key={id} className="input-field">
-                    <StaticInput
-                        {...itemProps}
-                        id={id}
-                        changeHandler={changeHandler}/>
-                </div>
-            )
-        }
+        const {id, ...itemProps} = item;
+        return (
+            <div key={id} className="input-field">
+                <StaticInput
+                    {...itemProps}
+                    id={id}
+                    changeHandler={changeHandler}/>
+            </div>
+        )
     })
     const passInput = login.password.map( (item) => {
-        if ( typeof item === 'object' && isEmpty(item) ){
-            const {id, ...itemProps} = item;
-            return (
-                <div key={id} className="input-field">
-                    <InputPassword
-                        id={id}
-                        {...itemProps}
-                        changeHandler={changeHandler}/>
-                </div>
-            )
-        }
+        const {id, ...itemProps} = item;
+        return (
+            <div key={id} className="input-field">
+                <InputPassword
+                    id={id}
+                    {...itemProps}
+                    changeHandler={changeHandler}/>
+            </div>
+        )
     })
-    function isEmpty(obj) {
-        for(let key in obj)
-        {
-            return true;
-        }
-        return false;
-    }
+
     return (
         <>
             <div className="auth">

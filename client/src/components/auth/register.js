@@ -7,8 +7,6 @@ import titles from "../../modules/titles.module.css";
 import buttons from "../../modules/buttons.module.css";
 import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
-import ParticlesComponent from "../particles-background/ParticlesComponent";
-import dotStyles from "../dots/dots.module.css";
 
 const Register = () => {
     const {loading, request, error, clearError} = useHttp()
@@ -45,38 +43,28 @@ const register= {
 }
 
     const statInputs = register.static.map( (item) => {
-        if ( typeof item === 'object' && isEmpty(item) ){
-            const {id, ...itemProps} = item;
-            return (
-                <div key={id} className="input-field">
-                    <StaticInput
-                        {...itemProps}
-                        id={id}
-                        changeHandler={(e) => changeHandler(e)}/>
-                </div>
-            )
-        }
+        const {id, ...itemProps} = item;
+        return (
+            <div key={id} className="input-field">
+                <StaticInput
+                    {...itemProps}
+                    id={id}
+                    changeHandler={(e) => changeHandler(e)}/>
+            </div>
+        )
     })
     const passInput = register.password.map( (item) => {
-        if ( typeof item === 'object' && isEmpty(item) ){
-            const {id, ...itemProps} = item;
-            return (
-                <div key={id} className="input-field">
-                    <InputPassword
-                        id={id}
-                        {...itemProps}
-                        changeHandler={(e) => changeHandler(e)}/>
-                </div>
-            )
-        }
+        const {id, ...itemProps} = item;
+        return (
+            <div key={id} className="input-field">
+                <InputPassword
+                    id={id}
+                    {...itemProps}
+                    changeHandler={(e) => changeHandler(e)}/>
+            </div>
+        )
     })
-    function isEmpty(obj) {
-        for(let key in obj)
-        {
-            return true;
-        }
-        return false;
-    }
+
     return (
         <>
             <div className="auth">

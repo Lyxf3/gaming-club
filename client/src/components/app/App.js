@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {BrowserRouter as Router} from "react-router-dom";
 import {useRoutes} from "../../routes";
 
@@ -15,10 +15,7 @@ function App() {
     let isAuthenticated = !!token
     const routes = useRoutes(isAuthenticated)
 
-    useEffect(() => {
-       isAuthenticated = !!token
-    }, [token])
-    console.log(isAuthenticated)
+
     return (
         <AuthContext.Provider value={{
             token, login, logout, userId, isAuthenticated

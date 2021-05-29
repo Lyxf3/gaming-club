@@ -1,11 +1,10 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {NavLink, withRouter} from "react-router-dom";
 import {StaticInput} from "../authPageItems";
 import "./authPage.css"
 import titles from "../../modules/titles.module.css";
 import buttons from "../../modules/buttons.module.css";
 import {useHttp} from "../../hooks/http.hook";
-import ParticlesComponent from "../particles-background/ParticlesComponent";
 import {useMessage} from "../../hooks/message.hook";
 
 
@@ -42,25 +41,17 @@ const SendEmail = () => {
     }
 
     const statInputs = sendEmail.static.map( (item) => {
-        if ( typeof item === 'object' && isEmpty(item) ){
-            const {id, ...itemProps} = item;
-            return (
-                <div key={id} className="input-field">
-                    <StaticInput
-                        {...itemProps}
-                        id={id}
-                        changeHandler={(e) => changeHandler(e)}/>
-                </div>
-            )
-        }
+        const {id, ...itemProps} = item;
+        return (
+            <div key={id} className="input-field">
+                <StaticInput
+                    {...itemProps}
+                    id={id}
+                    changeHandler={(e) => changeHandler(e)}/>
+            </div>
+        )
     })
-    function isEmpty(obj) {
-        for(let key in obj)
-        {
-            return true;
-        }
-        return false;
-    }
+
     return (
         <>
             <div className="auth">

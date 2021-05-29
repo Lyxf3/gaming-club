@@ -1,19 +1,41 @@
 .container {
-    max-width: 200px;
-    width: 100%;
-    max-height: 260px;
-    height: 100%;
+    width: 200px;
+    height: 260px;
     background: #3F3F3F;
     display: grid;
     grid-template-rows: 64px 24px 20px 20px 20px;
-
+    padding-top: 30px;
+    row-gap: 15px;
+    cursor: pointer;
 }
 
 .game_icon {
     display: block;
     grid-row: 1 / 1;
-    max-width: 68px;
-    width: 100%;
-    max-height: 64px;
-    height: 100%;
+    margin: 0 auto;
+    width: 68px;
+    height: 64px;
+}
+
+.container h2 {
+    grid-row: 2 / 2;
+}
+.date {
+    grid-row: 3 / 3;
+    padding-left: 11px;
+}
+
+.place {
+    grid-row: 4 / 4;
+    padding-left: 11px;
+}
+
+.prize {
+    grid-row: 5 / 5;
+    padding-left: 11px;
+
+}
+
+.prize span {
+    color: #E8505B;
 }

@@ -13,6 +13,7 @@
 }
 
 .about-club {
+    margin: 0 auto;
     grid-area: about-club;
     justify-content: center;
     display: flex;
