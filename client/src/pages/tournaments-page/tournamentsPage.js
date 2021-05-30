@@ -7,6 +7,7 @@ import csgo from '../../details/icons/game-disciplines/csgo-icon.png'
 import valorant from '../../details/icons/game-disciplines/valorant-icon.png'
 
 import './tournamentsPage.css'
+import {EventSearchPanel} from "../../components/eventSearchPanel/eventSearchPanel";
 
 export const TournamentsPage = () => {
     const data = [
@@ -30,6 +31,10 @@ export const TournamentsPage = () => {
     return (
         <div className="content">
             <div className="events">
+                <EventSearchPanel />
+            </div>
+
+            <div className="tournaments">
                 {tournaments}
             </div>
         </div>
