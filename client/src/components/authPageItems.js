@@ -1,6 +1,6 @@
-import components from "../modules/components.module.css";
-
 import React, {useState} from "react";
+
+import components from "../modules/components.module.css";
 
 export const StaticInput = (props) => {
     const {labelValue, changeHandler, name, id} = props
@@ -33,6 +33,22 @@ export const InputPassword = (props) => {
             />
             <button
             onClick={() => setShow(!show)}>click</button>
+        </>
+    )
+}
+
+export const SearchInput = (props) => {
+    const {value, changeHandler, id, placeholder} = props
+    return (
+        <>
+            <input
+                className={components.search_input}
+                id={id}
+                type="text"
+                value={value}
+                placeholder={placeholder}
+                onChange={(e) => changeHandler(e)}
+            />
         </>
     )
 }

@@ -1,18 +1,21 @@
 import React, { useState} from 'react';
+import {SearchInput} from "../authPageItems";
 
-
-export const EventSearchPanel = () => {
+export const EventSearchPanel = (props) => {
+    const {onUpdateSearch} = props
     const [state, setState] = useState( "")
-    const onUpdateSearch = e => {
-        setState(e.target.value)
+
+    const updateSearchHandler = e => {
+        const term = e.target.value;
+        setState(term);
+        onUpdateSearch(term);
     }
+
     return (
-        <input
-            className="form-control search-input"
-            type="text"
-            placeholder="Поиск по записям"
+        <SearchInput
+            changeHandler={updateSearchHandler}
             value={state}
-            onChange={onUpdateSearch}
+            placeholder={"Поиск по названию"}
         />
     )
 }

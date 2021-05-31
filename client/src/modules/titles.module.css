@@ -98,3 +98,14 @@ color: #FFFFFF;
     color: #FFFFFF;
 
 }
+
+.info_title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+
+}

@@ -1,14 +1,11 @@
 .social_networks {
     grid-column: 2 / 3;
-    width: 102px;
+    width: 87px;
     display: flex;
     align-content: flex-end;
     justify-content: space-between;
 }
 
-.social_networks img {
-    width: 36px;
-    height: 36px;
-}
+
 
 
