@@ -42,9 +42,13 @@ export const TournamentsPage = () => {
             setActive(events[index])
         }
     }
-    console.log(active)
-    useEffect(() => {
+
+    function componentDidMount() {
         localStorage.setItem("Important data", JSON.stringify(events))
+
+    }
+    componentDidMount()
+    useEffect(() => {
         const data = JSON.parse(localStorage.getItem("Important data"))
         setEvents(data)
     }, [setEvents])
