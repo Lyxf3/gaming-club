@@ -1,4 +1,5 @@
 import {useState, useCallback, useEffect} from 'react'
+import {data} from '../pages/tournaments-page/data'
 
 const storageName = 'userData'
 
@@ -14,6 +15,12 @@ export const useAuth = () => {
         localStorage.setItem(storageName, JSON.stringify({
             userId: id, token: jwtToken
         }))
+        const important = JSON.parse(localStorage.getItem("Important data"))
+
+        if (!important) {
+            localStorage.setItem("Important data", JSON.stringify(data))
+        }
+
     }, [])
 
 

@@ -4,7 +4,7 @@ import dota from '../../details/icons/game-disciplines/dota-icon.png'
 import r6 from '../../details/icons/game-disciplines/r6-icon.png'
 import csgo from '../../details/icons/game-disciplines/csgo-icon.png'
 import valorant from '../../details/icons/game-disciplines/valorant-icon.png'
-
+import {data} from './data'
 import './tournamentsPage.css'
 import {EventSearchPanel} from "../../components/eventSearchPanel/eventSearchPanel";
 import {EventList} from "../../components/eventsList/eventList";
@@ -12,15 +12,7 @@ import {EventStatusFilter} from "../../components/eventStatusFilter/eventStatusF
 import {EventsAdditionalInformation} from "../../components/eventsAdditionalInformation/eventsAdditionalInformation";
 
 export const TournamentsPage = () => {
-    const [events, setEvents] = useState([
-        {game: dota, header: "ZP CSGO 5vs5", startDate: "25.10.22", endDate: "26.10.20",maxPlace: 64, location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#",  prize: "₴1500", teams: ["bbbbb","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 0},
-        {game: dota, header: "Twsad", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb", "aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"],important: false, id: 1},
-        {game: valorant, header: "a", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb","aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 2},
-        {game: dota, header: "dsad", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb", "aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 3},
-        {game: valorant, header: "DOTA CUP", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb", "aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 4},
-        {game: dota, header: "ZP Fast CUP 5 vs 5", startDate: "25.10.20", endDate: "26.10.20",maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 5},
-        {game: dota, header: "KEKW", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb", "aaa", "aaa", "aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 6}
-    ])
+    const [events, setEvents] = useState(data)
     const [term, setTerm] = useState("")
     const [filter, setFilter] = useState(false)
     const [active, setActive] = useState(false)
@@ -43,14 +35,10 @@ export const TournamentsPage = () => {
         }
     }
 
-    function componentDidMount() {
-        localStorage.setItem("Important data", JSON.stringify(events))
-
-    }
-    componentDidMount()
     useEffect(() => {
-        const data = JSON.parse(localStorage.getItem("Important data"))
-        setEvents(data)
+        const newData = JSON.parse(localStorage.getItem("Important data"))
+        console.log(newData)
+        setEvents(newData)
     }, [setEvents])
 
 
@@ -86,7 +74,6 @@ export const TournamentsPage = () => {
     }
 
     const visiblePosts = filterPost(searchPost(allPosts, term), filter)
-    console.log(events)
     return (
         <div className="content">
             <div className="left">

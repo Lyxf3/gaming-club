@@ -1,0 +1,15 @@
+
+import dota from '../../details/icons/game-disciplines/dota-icon.png'
+import r6 from '../../details/icons/game-disciplines/r6-icon.png'
+import csgo from '../../details/icons/game-disciplines/csgo-icon.png'
+import valorant from '../../details/icons/game-disciplines/valorant-icon.png'
+
+export const data = [
+    {game: dota, header: "ZP CSGO 5vs5", startDate: "25.10.22", endDate: "26.10.20",maxPlace: 64, location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#",  prize: "₴1500", teams: ["bbbbb","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 0},
+    {game: dota, header: "Twsad", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb", "aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"],important: false, id: 1},
+    {game: valorant, header: "a", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb","aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 2},
+    {game: dota, header: "dsad", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb", "aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 3},
+    {game: valorant, header: "DOTA CUP", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb", "aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 4},
+    {game: dota, header: "ZP Fast CUP 5 vs 5", startDate: "25.10.20", endDate: "26.10.20",maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 5},
+    {game: dota, header: "KEKW", startDate: "25.10.20", endDate: "26.10.20", maxPlace: 64, prize: "₴1500", location: "LAN", tournamentSystem: "Double-Elimination BO1 / Final BO3", regulationsLink: "#", registerLink: "#", teams: ["bbbbb", "aaa", "aaa", "aaa","aaa","aaa","aaa","aaa","aaa", "aaa", "aaa", "aaa", "aaa", "aaa"], important: false, id: 6}
+]
