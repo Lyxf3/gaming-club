@@ -22,6 +22,48 @@
     grid-area: nav
 }
 
+.bookedPc {
+    margin-right: 20px;
+    justify-self: end;
+    grid-area: bookedPc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 450px;
+    height: 36px;
+    background: #000000;
+    border-radius: 4px;
+}
+.header {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 119.19%;
+
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+.cross {
+    cursor: pointer;
+}
+.idPc {
+    text-transform: uppercase;
+
+}
+
+.price {
+    text-transform: uppercase;
+}
+
+.price span{
+    text-transform: uppercase;
+    color: #E8505B;
+    font-weight: 900;
+
+}
 .menu {
     width: 500px;
     display: flex;
@@ -34,7 +76,7 @@
 }
 
 .menu li a.active:after {
-
+background: #E8505B;
 }
 
 

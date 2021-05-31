@@ -29,6 +29,8 @@ export const useAuth = () => {
         setUserId(null)
         localStorage.removeItem(storageName)
         localStorage.removeItem("Important data")
+        localStorage.removeItem("Booked PC")
+
     }, [])
 
     useEffect(() => {

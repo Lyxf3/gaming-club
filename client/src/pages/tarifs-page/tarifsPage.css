@@ -1,0 +1,15 @@
+.left1 {
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.right1 {
+    grid-column: 3 / 3;
+    grid-row: 2 / 2;
+
+}
+

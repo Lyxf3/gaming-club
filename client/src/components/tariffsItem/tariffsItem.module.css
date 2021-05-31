@@ -1,0 +1,98 @@
+.tariff_item {
+    display: grid;
+    grid-template-rows: 25px 152px;
+}
+.tariff_item h2 {
+    grid-row: 1 / 1;
+    margin-left: 16px;
+}
+
+.tariff_container {
+    cursor: pointer;
+    user-select: none;
+    width: 720px;
+    height: 152px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 10px 2fr 2fr 5px 1fr;
+    column-gap: 5px;
+    align-items: start;
+    /*padding: 20px;*/
+}
+
+.pcSettings {
+    margin-top: 10px;
+
+    grid-column: 2 / 2;
+    display: grid;
+    row-gap: 5px;
+    list-style-type: none;
+}
+
+.periphery {
+    margin-top: 10px;
+    grid-column: 3 / 3;
+    display: grid;
+    row-gap: 5px;
+    list-style-type: none;
+
+}
+.dot {
+    width: 4px;
+    height: 4px;
+    background: #FFFFFF;
+    border-radius: 100%;
+    margin-right: 5px;
+
+}
+.line {
+    grid-column: 4 / 4;
+    height: 149px;
+    background: #FFFFFF;
+    width: 2px;
+    justify-self: end;
+    align-self: start;
+}
+
+.tariffs {
+    grid-column: 5 / 5;
+    display: grid;
+    align-self: center;
+    justify-items: center;
+    row-gap: 10px;
+
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.text {
+
+    line-height: 119.88%;
+
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+
+
+.timeAndCost {
+}
+
+.time {
+
+}
+
+.cost {
+
+}
+.cost span{
+    color: #E8505B;
+    font-weight: 900;
+}

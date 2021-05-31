@@ -1,15 +1,12 @@
 import React, {useEffect, useState} from 'react'
 
-import dota from '../../details/icons/game-disciplines/dota-icon.png'
-import r6 from '../../details/icons/game-disciplines/r6-icon.png'
-import csgo from '../../details/icons/game-disciplines/csgo-icon.png'
-import valorant from '../../details/icons/game-disciplines/valorant-icon.png'
 import {data} from './data'
-import './tournamentsPage.css'
 import {EventSearchPanel} from "../../components/eventSearchPanel/eventSearchPanel";
 import {EventList} from "../../components/eventsList/eventList";
 import {EventStatusFilter} from "../../components/eventStatusFilter/eventStatusFilter";
 import {EventsAdditionalInformation} from "../../components/eventsAdditionalInformation/eventsAdditionalInformation";
+
+import './tournamentsPage.css'
 
 export const TournamentsPage = () => {
     const [events, setEvents] = useState(data)
