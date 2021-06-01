@@ -8,5 +8,19 @@
 .slider div {
     height: 100%;
     width: 100%;
+}
+
+.item1 {
+    background: url("../../details/images/slider/laptop-1.jpg") center center / cover no-repeat ;
+
+}
+
+.item2 {
     background: url("../../details/images/slider/vip-zone-pcs.png") center center / cover no-repeat ;
+
+}
+
+.item3 {
+    background: url("../../details/images/slider/computer-1.jpg") center center / cover no-repeat ;
+
 }

@@ -1,9 +1,12 @@
-import React, { useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {TariffsList} from "../../components/tariffsList/tariffsList";
 import {TariffsBook} from "../../components/tariffsBook/TariffsBook";
 import './tarifsPage.css'
+import {AuthContext} from "../../context/AuthContext";
 
 export const TarifsPage = () => {
+    const auth = useContext(AuthContext)
+
     const [active, setActive] = useState(false)
     const tariffsData = [
         {
@@ -64,11 +67,11 @@ export const TarifsPage = () => {
             ]
         }
     ]
-    const [pcs, setPcs] = useState([
+    const pcs = [
         [{status: false}, {status: true}, {status: false}, {status: false}, {status: false}, {status: false}, {status: false}],
         [{status: false}, {status: false}, {status: false}, {status: false}, {status: false}, {status: false}, {status: false}],
         [{status: false}, {status: false}, {status: false}, {status: false}, {status: false}, {status: false}, {status: false}]
-    ])
+    ]
     const onToggleActive = id => {
         if (active.id === id) {
             setActive(false)
@@ -93,8 +96,7 @@ export const TarifsPage = () => {
         if(isBook) {
         const header = active.header
         const price = active.timeAndCost[0].cost
-        const newObj = {header, id, price}
-            localStorage.setItem("Booked PC", JSON.stringify(newObj))
+        auth.bookPc(header, id, price)
         setActive(false)
         }
     }

@@ -1,7 +1,7 @@
 
 import dota from '../../details/icons/game-disciplines/dota-icon.png'
-import r6 from '../../details/icons/game-disciplines/r6-icon.png'
-import csgo from '../../details/icons/game-disciplines/csgo-icon.png'
+// import r6 from '../../details/icons/game-disciplines/r6-icon.png'
+// import csgo from '../../details/icons/game-disciplines/csgo-icon.png'
 import valorant from '../../details/icons/game-disciplines/valorant-icon.png'
 
 export const data = [

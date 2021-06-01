@@ -1,4 +1,4 @@
-import React, {useMemo} from "react";
+import React from "react";
 
 import titles from "../../modules/titles.module.css";
 import tariff from './tariffsItem.module.css'
@@ -38,8 +38,8 @@ export const TariffsItem = ({header, pcSettings, periphery, timeAndCost, onToggl
             </div>
         )
     })
-    const borderActive = useMemo(() => (activeId === id ? { border: "3px solid #E8505B"} : {}), [activeId])
-    const lineActive = useMemo(() => (activeId === id ? { background: "#E8505B"} : {}), [activeId])
+    const borderActive = (activeId === id ? { border: "3px solid #E8505B"} : {})
+    const lineActive = (activeId === id ? { background: "#E8505B"} : {})
 
     return (
         <div className={tariff.tariff_item}>

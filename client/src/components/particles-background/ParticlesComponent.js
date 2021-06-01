@@ -2,7 +2,7 @@ import React from "react";
 import Particles from "react-particles-js";
 import "./Particles.css"
 
-export default () => {
+export default  () => {
     return (
         <div
             style={{

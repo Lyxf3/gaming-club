@@ -33,7 +33,7 @@ const currentPlace = teams.length
     }
 
     const styleImportant = useMemo(() => ({fill: important ? "#F9D56E" : "#E0E0E0"}), [important])
-    const styleActive = useMemo(() => (activeId === id ? { border: "3px solid #E8505B"} : {}), [activeId])
+    const styleActive = useMemo(() => (activeId === id ? { border: "3px solid #E8505B"} : {}), [activeId, id])
 
     return (
     <div className={tour.container} style={styleActive}>
