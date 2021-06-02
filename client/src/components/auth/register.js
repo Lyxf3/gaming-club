@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState } from "react";
 import {NavLink, withRouter} from "react-router-dom";
 import {StaticInput, InputPassword} from "../authPageItems";
 import "./authPage.css"
@@ -8,37 +8,37 @@ import buttons from "../../modules/buttons.module.css";
 import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
 
-const Register = () => {
+const Register = ({history}) => {
     const {loading, request, error, clearError} = useHttp()
-    const message = useMessage()
-
     const [form, setForm] = useState({
         login: "", email: "", password: ""
     })
     const changeHandler = event => {
         setForm({ ...form, [event.target.name]: event.target.value })
     }
-    useEffect(() => {
-        message(error)
-        clearError()
-    }, [error, message, clearError])
+    useEffect(async () => {
+        if (error !== null) {
+            await alert(error)
+            setForm({login: "", email: "", password: ""})
 
-    useEffect(() => {
-        window.M.updateTextFields()
-    }, [])
+        }
+        clearError()
+    }, [error, clearError])
+
+
     const registerHandler = async () => {
         try {
-            const data = await request('/api/auth/register', 'POST', {...form})
-            message(data.message)
+            await request('/api/auth/register', 'POST', {...form})
+            history.push('/auth/login')
         } catch (e) {}
     }
 const register= {
     static: [
-        {labelValue: "Логин", id: "login", name: "login"},
-        {labelValue: "Email", id: "email", name: "email"}
+        {labelValue: "Логин", id: "login", name: "login", value: form.login},
+        {labelValue: "Email", id: "email", name: "email", value: form.email}
     ],
     password: [
-        {labelValue: "Пароль", id: "password", name: "password"}
+        {labelValue: "Пароль", id: "password", name: "password", value: form.password}
     ]
 }
 
@@ -72,7 +72,7 @@ const register= {
                 {statInputs}
                 {passInput}
 
-            <div className="card-action">
+                <div className="card-action">
                     <NavLink to={"/auth/login"} exact >
                         <button
                             className={buttons.btn_dark}
@@ -81,12 +81,12 @@ const register= {
                         </button>
                     </NavLink>
 
-                <button
-                        className={buttons.btn_white}
-                        onClick={(e) => registerHandler(e)}
-                        disabled={loading}
-                    >
-                        Подтвердить</button>
+                    <button
+                            className={buttons.btn_white}
+                            onClick={(e) => registerHandler(e)}
+                            disabled={loading}
+                        >
+                            Подтвердить</button>
                 </div>
             </div>
         </>

@@ -27,8 +27,12 @@ const Login = () => {
         } catch (e) {}
     }
 
-    useEffect(() => {
-        message(error)
+    useEffect(async () => {
+        if (error !== null) {
+            await alert(error)
+            setForm({login: "", password: ""})
+
+        }
         clearError()
     }, [error, message, clearError])
 
@@ -37,10 +41,10 @@ const Login = () => {
     }, [])
     const login = {
         static: [
-            {labelValue: "Логин", id: "login", name: "login"},
+            {labelValue: "Логин", id: "login", name: "login", value: form.login},
         ],
             password: [
-            {labelValue: "Пароль", id: "password", name: "password"}
+            {labelValue: "Пароль", id: "password", name: "password", value: form.password}
         ]
     }
     const statInputs = login.static.map( (item) => {
@@ -74,14 +78,13 @@ const Login = () => {
                 {passInput}
 
                 <div className="card-action">
-                    <NavLink to={"/auth/register"} exact >
-                        <button
-                            className={buttons.btn_dark}
-                            disabled={loading}>
-                                Регистрация
-                        </button>
-                    </NavLink>
 
+                    <button
+                        className={buttons.btn_white}
+                        onClick={loginHandler}
+                        disabled={loading}
+                    >
+                        Подтвердить</button>
                     <NavLink to={"/auth/sendEmail"} exact >
                         <button
                             className={buttons.btn_send_email}
@@ -89,13 +92,13 @@ const Login = () => {
                             Забыл Логин?
                         </button>
                     </NavLink>
-
-                <button
-                        className={buttons.btn_white}
-                        onClick={loginHandler}
-                        disabled={loading}
-                    >
-                        Подтвердить</button>
+                    <NavLink to={"/auth/register"} exact >
+                        <button
+                            className={buttons.btn_dark}
+                            disabled={loading}>
+                            Регистрация
+                        </button>
+                    </NavLink>
                 </div>
             </div>
         </>

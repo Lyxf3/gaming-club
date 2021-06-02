@@ -18,6 +18,29 @@
 
 }
 
+.password_input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.password_input .input_validate{
+    width: 450px;
+
+}
+
+.password_btn {
+    width: 50px;
+    height: 48px;
+
+    background: #FFFFFF;
+    border: 1px solid #D4D4D4;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0.105em;
+    color: rgba(0, 0, 0, 0.55);
+}
+
 .search_input {
     width: 80%;
     height: 36px;

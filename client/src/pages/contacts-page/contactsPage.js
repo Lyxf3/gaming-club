@@ -13,19 +13,21 @@ import phone from '../../details/icons/nav/phone.png'
 
 export const ContactsPage = () => {
     const {loading, request, error, clearError} = useHttp()
-    const message = useMessage()
 
     const [form, setForm] = useState({
         name: "", phone: ""
     })
     const requestACallInputs = [
-        {labelValue: "Имя", id: "name", name: "name"},
-        {labelValue: "Номер", id: "phone", name: "phone"}
+        {labelValue: "Имя", id: "name", name: "name", value: form.name},
+        {labelValue: "Номер", id: "phone", name: "phone", value: form.phone}
     ]
-    useEffect(() => {
-        message(error)
+    useEffect(async () => {
+        if (error !== null) {
+            await alert(error)
+            setForm({name: "", phone: ""})
+        }
         clearError()
-    }, [error, message, clearError])
+    }, [error, clearError])
 
     useEffect(() => {
         window.M.updateTextFields()
@@ -50,7 +52,8 @@ export const ContactsPage = () => {
     const requestACallHandler = async () => {
         try {
             const data = await request('/api/contacts', 'POST', {...form})
-            message(data.message)
+            await alert(data.message)
+            setForm({name: "", phone: ""})
         } catch (e) {}
     }
 
