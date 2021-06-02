@@ -12,7 +12,7 @@ import location from '../../details/icons/nav/location.png'
 import phone from '../../details/icons/nav/phone.png'
 
 export const ContactsPage = () => {
-    const {loading, error, clearError} = useHttp()
+    const {loading, request, error, clearError} = useHttp()
     const message = useMessage()
 
     const [form, setForm] = useState({
@@ -49,8 +49,8 @@ export const ContactsPage = () => {
 
     const requestACallHandler = async () => {
         try {
-            // const data = await request('/api/contacts', 'POST', {...form})
-            // message(data.message)
+            const data = await request('/api/contacts', 'POST', {...form})
+            message(data.message)
         } catch (e) {}
     }
 
